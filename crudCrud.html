@@ -62,19 +62,19 @@ function showNewUserOnScreen(user){
                 const parentNode = document.getElementById('listOfUsers');
                 const childHTML = `<li id=${user._id}> ${user.name} - ${user.email}
                                         <button onclick=deleteUser('${user._id}')> Delete User </button>
-                                        <button onclick=editUser('${user._id}'),'${user.name}','${user.phonenumber}'> edit user</button>
+                                        <button onclick=editUser('${user._id}','${user.name}','${user.phonenumber}','${user._id})> edit user</button>
                                      </li>`
 
                 parentNode.innerHTML = parentNode.innerHTML + childHTML;
             }
 
             //edit user
-            function editUserDetails(emailId,name,phonenumber){
+            function editUserDetails(emailId,name,phonenumber,userId){
                 document.getElementById('email').value=emailId;
                 document.getElementById('name').value=name;
                 document.getElementById('phonenumber').value=phonenumber;
 
-deleteUser(emailId)
+deleteUser(userId)
             }
 
             // deleteUser('abc@gmail.com')
